@@ -4,7 +4,7 @@
 # Eventually, I want to print the STANDARD DEVIATION of a set of numbers.
 # In other words, if I have a set of numbers like this:
 
-#     first_dataset = [93, 65, 87, 68, 2, 64, 36, 96, 45, 47]
+first_dataset = [93, 65, 87, 68, 2, 64, 36, 96, 45, 47]
 
 # Then I want to be able to do something like this:
 
@@ -27,10 +27,10 @@
 #   - we add it to the running total
 #  - after we've looked at every number, the running total is the sum
 
-def sum(list_of_numbers)
+def sum(first_dataset)
   running_total = 0
-  list_of_numbers.each do |number|
-    running_total = running_total + number
+  first_dataset.each do |numbers|
+    running_total = running_total + numbers
   end
 
   return running_total
@@ -42,13 +42,23 @@ end
 #  - we sum up all the elements
 #  - then we divide the sum by the number of elements in the set
 
-def mean(list_of_numbers)
+def mean(first_dataset)
+  
+
   # Let's re-use the work we did above in the sum method
 
   # ====================
-  # Your code goes here.
-  # ====================
-end
+  running_total = 0
+  first_dataset.each do |numbers|
+    running_total = running_total + numbers
+  end
+  
+  count_of_numbers = first_dataset.count
+  
+  return running_total / count_of_numbers
+
+end  # ====================
+
 
 # VARIANCE
 # ========
@@ -59,20 +69,49 @@ end
 #   - we square the difference
 #  - the variance is the mean of the squared differences
 
-def variance(list_of_numbers)
+def variance(first_dataset)
   # Let's re-use the work we did above in the mean method
+  differences = []
+  difference_squared = 0
+  differences_squared = []
+  sum_of_difference_squared = 0
+  # ====================
+  
+  # get the differences
+  first_dataset.each do |numbers|
+    differences.push(numbers - mean(first_dataset))
+  end
+
+# get the squared differences
+  differences.each do |difference|
+   differences_squared.push(difference ** 2)
+ end
+
+#get the mean of the squared differences
+
+  # add the squared differences up
+ differences_squared.each do |squares|
+   sum_of_difference_squared = sum_of_difference_squared + squares
+ end
+
+# divide by number of numbers
+ return sum_of_difference_squared / first_dataset.count
 
   # ====================
-  # Your code goes here.
-  # ====================
 end
+
+puts differences
+puts differences_squared
+puts sum_of_difference_squared
+puts variance(first_dataset)
+#puts variance(first_dataset)
 
 # STANDARD DEVIATION
 # ==================
 # To find the standard deviation of a set,
 #  - take the square root of the variance
 
-def standard_deviation(list_of_numbers)
+def standard_deviation(first_dataset)
   # ====================
   # Your code goes here.
   # ====================
