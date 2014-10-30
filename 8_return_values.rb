@@ -4,7 +4,7 @@
 # Eventually, I want to print the STANDARD DEVIATION of a set of numbers.
 # In other words, if I have a set of numbers like this:
 
-first_dataset = [93, 65, 87, 68, 2, 64, 36, 96, 45, 47]
+first_dataset = [93.0, 65.0, 87.0, 68.0, 2.0, 64.0, 36.0, 96.0, 45.0, 47.0]
 
 # Then I want to be able to do something like this:
 
@@ -86,25 +86,24 @@ def variance(first_dataset)
   differences.each do |difference|
    differences_squared.push(difference ** 2)
  end
-
 #get the mean of the squared differences
 
   # add the squared differences up
  differences_squared.each do |squares|
    sum_of_difference_squared = sum_of_difference_squared + squares
  end
+ return sum_of_difference_squared
 
 # divide by number of numbers
  return sum_of_difference_squared / first_dataset.count
 
-  # ====================
 end
 
-puts differences
-puts differences_squared
-puts sum_of_difference_squared
+# puts variance(first_dataset)
+# puts differences_squared
+# puts sum_of_difference_squared
+# puts variance(first_dataset)
 puts variance(first_dataset)
-#puts variance(first_dataset)
 
 # STANDARD DEVIATION
 # ==================
