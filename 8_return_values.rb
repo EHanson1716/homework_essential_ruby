@@ -43,7 +43,7 @@ end
 #  - then we divide the sum by the number of elements in the set
 
 def mean(first_dataset)
-  
+
 
   # Let's re-use the work we did above in the sum method
 
@@ -52,9 +52,9 @@ def mean(first_dataset)
   first_dataset.each do |numbers|
     running_total = running_total + numbers
   end
-  
+
   count_of_numbers = first_dataset.count
-  
+
   return running_total / count_of_numbers
 
 end  # ====================
@@ -76,7 +76,7 @@ def variance(first_dataset)
   differences_squared = []
   sum_of_difference_squared = 0
   # ====================
-  
+
   # get the differences
   first_dataset.each do |numbers|
     differences.push(numbers - mean(first_dataset))
@@ -86,7 +86,8 @@ def variance(first_dataset)
   differences.each do |difference|
    differences_squared.push(difference ** 2)
  end
-#get the mean of the squared differences
+
+# get the mean of the squared differences
 
   # add the squared differences up
  differences_squared.each do |squares|
@@ -98,9 +99,6 @@ def variance(first_dataset)
 
 end
 
-# puts variance(first_dataset)
-# puts differences_squared
-# puts sum_of_difference_squared
 # puts variance(first_dataset)
 
 # STANDARD DEVIATION

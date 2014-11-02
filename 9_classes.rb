@@ -82,7 +82,7 @@ puts person4.full_name
 puts person4.grade
 
 # What would happen if I tried doing:
-#     person4.role
+    # person4.role
 # What about:
-#     person1.grade
+    # person1.grade
 # Why?
